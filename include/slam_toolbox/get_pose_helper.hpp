@@ -41,16 +41,20 @@ public:
 
   bool getOdomPose(karto::Pose2 & karto_pose, const rclcpp::Time & t)
   {
+
     geometry_msgs::msg::TransformStamped base_ident, odom_pose;
     base_ident.header.stamp = t;
     base_ident.header.frame_id = base_frame_;
     base_ident.transform.rotation.w = 1.0;
 
+    std::cout << "base_frame_ " << base_frame_ << std::endl; // 
     try {
       odom_pose = tf_->transform(base_ident, odom_frame_);
     } catch (tf2::TransformException & e) {
       return false;
     }
+
+
 
     const double yaw = tf2::getYaw(odom_pose.transform.rotation);
     karto_pose = karto::Pose2(odom_pose.transform.translation.x,

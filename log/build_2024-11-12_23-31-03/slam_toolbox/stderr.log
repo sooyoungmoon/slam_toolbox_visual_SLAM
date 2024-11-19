@@ -1,0 +1,73 @@
+[33mCMake Warning (dev):
+  The library that is being linked to, yaml-cpp, is marked as being
+  deprecated by the owner.  The message provided by the developer is:
+
+  The target yaml-cpp is deprecated and will be removed in version 0.10.0.
+  Use the yaml-cpp::yaml-cpp target instead.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev):
+  The library that is being linked to, yaml-cpp, is marked as being
+  deprecated by the owner.  The message provided by the developer is:
+
+  The target yaml-cpp is deprecated and will be removed in version 0.10.0.
+  Use the yaml-cpp::yaml-cpp target instead.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:17[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_utils.h:50:48:[m[K [01;35m[Kwarning: [m[K‘[01m[KLocalParameterization[m[K’ is deprecated: LocalParameterizations will be removed from the Ceres Solver API in version 2.2.0. Use Manifolds instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   50 |   static ceres::LocalParameterization * Create([01;35m[K)[m[K
+      |                                                [01;35m[K^[m[K
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:10[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/usr/local/include/ceres/local_parameterization.h:121:18:[m[K [01;36m[Knote: [m[Kdeclared here
+  121 |     CERES_EXPORT [01;36m[KLocalParameterization[m[K {
+      |                  [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:17[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_utils.h:[m[K In static member function ‘[01m[Kstatic ceres::LocalParameterization* AngleLocalParameterization::Create()[m[K’:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_utils.h:52:23:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class Functor, int kGlobalSize, int kLocalSize> class ceres::AutoDiffLocalParameterization[m[K’ is deprecated: Use AutoDiffManifold instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   52 |     return new ceres::[01;35m[KAutoDiffLocalParameterization[m[K<AngleLocalParameterization, 1, 1>;
+      |                       [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/local/include/ceres/ceres.h:39[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:11[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/usr/local/include/ceres/autodiff_local_parameterization.h:114:5:[m[K [01;36m[Knote: [m[Kdeclared here
+  114 |     [01;36m[KAutoDiffLocalParameterization[m[K : public LocalParameterization {
+      |     [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:[m[K At global scope:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:68:34:[m[K [01;35m[Kwarning: [m[K‘[01m[KLocalParameterization[m[K’ is deprecated: LocalParameterizations will be removed from the Ceres Solver API in version 2.2.0. Use Manifolds instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+   68 |   ceres::LocalParameterization * [01;35m[Kangle_local_parameterization_[m[K;
+      |                                  [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:10[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/usr/local/include/ceres/local_parameterization.h:121:18:[m[K [01;36m[Knote: [m[Kdeclared here
+  121 |     CERES_EXPORT [01;36m[KLocalParameterization[m[K {
+      |                  [01;36m[K^~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:[m[K In member function ‘[01m[Kvirtual void solver_plugins::CeresSolver::AddConstraint(karto::Edge<karto::LocalizedRangeScan>*)[m[K’:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:341:32:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid ceres::Problem::SetParameterization(double*, ceres::LocalParameterization*)[m[K’ is deprecated: LocalParameterizations are deprecated. Use SetManifold instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  341 |   [01;35m[Kproblem_->SetParameterization(&node1it->second(2),[m[K
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+  342 | [01;35m[K    angle_local_parameterization_)[m[K;
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/local/include/ceres/ceres.h:66[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:11[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/usr/local/include/ceres/problem.h:395:8:[m[K [01;36m[Knote: [m[Kdeclared here
+  395 |   void [01;36m[KSetParameterization[m[K(double* values,
+      |        [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:343:32:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid ceres::Problem::SetParameterization(double*, ceres::LocalParameterization*)[m[K’ is deprecated: LocalParameterizations are deprecated. Use SetManifold instead. [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wdeprecated-declarations-Wdeprecated-declarations]8;;[m[K]
+  343 |   [01;35m[Kproblem_->SetParameterization(&node2it->second(2),[m[K
+      |   [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~[m[K
+  344 | [01;35m[K    angle_local_parameterization_)[m[K;
+      |     [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/usr/local/include/ceres/ceres.h:66[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:11[m[K,
+                 from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/usr/local/include/ceres/problem.h:395:8:[m[K [01;36m[Knote: [m[Kdeclared here
+  395 |   void [01;36m[KSetParameterization[m[K(double* values,
+      |        [01;36m[K^~~~~~~~~~~~~~~~~~~[m[K

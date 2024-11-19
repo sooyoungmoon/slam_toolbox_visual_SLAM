@@ -1,0 +1,27 @@
+[33mCMake Warning (dev):
+  The library that is being linked to, yaml-cpp, is marked as being
+  deprecated by the owner.  The message provided by the developer is:
+
+  The target yaml-cpp is deprecated and will be removed in version 0.10.0.
+  Use the yaml-cpp::yaml-cpp target instead.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[33mCMake Warning (dev):
+  The library that is being linked to, yaml-cpp, is marked as being
+  deprecated by the owner.  The message provided by the developer is:
+
+  The target yaml-cpp is deprecated and will be removed in version 0.10.0.
+  Use the yaml-cpp::yaml-cpp target instead.
+
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+In file included from [01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.cpp:9[m[K:
+[01m[K/home/moon/ros2_ws/src/slam_toolbox/solvers/ceres_solver.hpp:10:10:[m[K [01;31m[Kfatal error: [m[Kceres/local_parameterization.h: 그런 파일이나 디렉터리가 없습니다
+   10 | #include [01;31m[K<ceres/local_parameterization.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/ceres_solver_plugin.dir/build.make:76: CMakeFiles/ceres_solver_plugin.dir/solvers/ceres_solver.cpp.o] 오류 1
+gmake[1]: *** [CMakeFiles/Makefile2:665: CMakeFiles/ceres_solver_plugin.dir/all] 오류 2
+gmake[1]: *** 끝나지 않은 작업을 기다리고 있습니다....
+gmake: *** [Makefile:146: all] 오류 2

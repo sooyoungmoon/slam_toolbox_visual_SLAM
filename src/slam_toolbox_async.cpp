@@ -35,6 +35,7 @@ void AsynchronousSlamToolbox::laserCallback(
   sensor_msgs::msg::LaserScan::ConstSharedPtr scan)
 /*****************************************************************************/
 {
+  std::cout << "getOdomPose()" << std::endl;
   // store scan header
   scan_header = scan->header;
   // no odom info
@@ -43,6 +44,7 @@ void AsynchronousSlamToolbox::laserCallback(
     RCLCPP_WARN(get_logger(), "Failed to compute odom pose");
     return;
   }
+  std::cout<< "transformed" << std::endl;
 
   // ensure the laser can be used
   LaserRangeFinder * laser = getLaser(scan);

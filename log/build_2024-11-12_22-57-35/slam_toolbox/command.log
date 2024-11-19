@@ -1,0 +1,4 @@
+Invoking command in '/home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/moon/ros2_ws/src/slam_toolbox -DCMAKE_INSTALL_PREFIX=/home/moon/ros2_ws/src/slam_toolbox/install/slam_toolbox
+Invoked command in '/home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/moon/ros2_ws/src/slam_toolbox -DCMAKE_INSTALL_PREFIX=/home/moon/ros2_ws/src/slam_toolbox/install/slam_toolbox
+Invoking command in '/home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox -- -j20 -l20
+Invoked command in '/home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/moon/ros2_ws/src/slam_toolbox/build/slam_toolbox -- -j20 -l20
