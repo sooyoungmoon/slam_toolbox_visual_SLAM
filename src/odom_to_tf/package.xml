@@ -3,7 +3,7 @@
    href="http://download.ros.org/schema/package_format3.xsd"
    schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
- <name>imu_to_odom</name>
+ <name>odom_to_tf</name>
  <version>0.0.1</version>
  <description> A ROS2 package to broadcast transform data (target frame: odom)</description>
  <maintainer email="moonmous@gmail.com">user</maintainer>

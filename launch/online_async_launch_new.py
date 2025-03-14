@@ -166,7 +166,7 @@ def generate_launch_description():
     )   
 
     my_tf2_publisher_node = Node(
-        package='imu_to_odom',
+        package='odom_to_tf',
         executable='myTfBroacaster',
         name='myTfBroacaster',
         output='screen'

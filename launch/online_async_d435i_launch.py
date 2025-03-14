@@ -55,6 +55,11 @@ def generate_launch_description():
         ('/camera/camera/color/camera_info', '/camera/color/camera_info'),
         ('/camera/camera/color/image_raw', '/camera/color/image_raw')  
     ]
+    remapping_depthimage_to_laserscan =[
+        ('/camera/depth/camera_info', '/camera/camera/depth/camera_info'),
+        ('/camera/depth/image_rect_raw', '/camera/camera/image_rect_raw')
+    ]
+
 
     enable_accel_arg = DeclareLaunchArgument(
         "enable_accel",
@@ -89,11 +94,12 @@ def generate_launch_description():
             )),
         launch_arguments={
             'remappings': str(remappings),
-            'enable_accel': LaunchConfiguration('enable_accel'),
-            'enable_gyro': LaunchConfiguration('enable_gyro'),
-            'align_depth.enable': LaunchConfiguration('align_depth.enable'), 
-            'linear_accel_cov': LaunchConfiguration('linear_accel_cov'),
-            'unite_imu_method': LaunchConfiguration('unite_imu_method')}.items()            
+            #'enable_accel': LaunchConfiguration('enable_accel'),
+            #'enable_gyro': LaunchConfiguration('enable_gyro'),
+            #'align_depth.enable': LaunchConfiguration('align_depth.enable'), 
+            #'linear_accel_cov': LaunchConfiguration('linear_accel_cov'),
+            #'unite_imu_method': LaunchConfiguration('unite_imu_method')
+            }.items()            
                  
     )
 
@@ -104,7 +110,10 @@ def generate_launch_description():
                 'launch',
                 'depthimage_to_laserscan-launch.py'
             )
-        )
+        ),
+        launch_arguments={
+            'remapping':str(remapping_depthimage_to_laserscan)
+        }.items()
     )
 
     imu_filter_madgwick_node = Node(
@@ -112,7 +121,7 @@ def generate_launch_description():
             executable='imu_filter_madgwick_node',
             name='ImuFilter',
             remappings=[
-                ('/imu/data_raw', '/camera/imu')
+                ('/imu/data_raw', '/camera/camera/imu')
             ],
             parameters=[{
                 'use_mag': False,
@@ -134,9 +143,9 @@ def generate_launch_description():
 
         }],
         remappings=[
-            ("rgb/image", "/camera/color/image_raw"),
-            ("depth/image", "/camera/depth/image_rect_raw"),
-            ("rgb/camera_info", "/camera/color/camera_info")
+            ("rgb/image", "/camera/camera/color/image_raw"),
+            ("depth/image", "/camera/camera/depth/image_rect_raw"),
+            ("rgb/camera_info", "/camera/camera/color/camera_info")
         ]
     )
 
@@ -155,7 +164,7 @@ def generate_launch_description():
     )   
 
     my_tf2_publisher_node = Node(
-        package='imu_to_odom',
+        package='odom_to_tf',
         executable='myTfBroacaster',
         name='myTfBroacaster',
         output='screen'
@@ -180,12 +189,12 @@ def generate_launch_description():
         arguments= ["0", "0", "0", "0", "0", "0", "odom", "base_footprint"]
     )
 
-    robot_localization_launch_include = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(
-                get_package_share_directory('robot_localization'),
-                'launch/ukf.launch.py'))     
-    )   
+    #robot_localization_launch_include = IncludeLaunchDescription(
+     #   PythonLaunchDescriptionSource(
+      #      os.path.join(
+       #         get_package_share_directory('robot_localization'),
+        #        'launch/ukf.launch.py'))     
+    #)   
 
 
     return LaunchDescription([
@@ -197,7 +206,7 @@ def generate_launch_description():
         linear_accel_cov_arg,
         unite_imu_method_arg,
         imu_filter_madgwick_node,
-        rs2_camera_launch_include,
+        #rs2_camera_launch_include,
         my_tf2_publisher_node,
         
         tf2_publisher_node_1,
